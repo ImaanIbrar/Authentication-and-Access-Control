@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Granted</title>
+</head>
+<style>
+    body {
+        background-color: #001f3f;
+    }
+
+    @font-face {
+        font-family: 'Century Gothic';
+        src: url("{{ url_for('static', filename='font/CenturyGothic.ttf') }}") format('truetype');
+    }
+
+    body {
+        font-family: 'Century Gothic', sans-serif;
+    }
+
+    h1,
+    h3 {
+        font-size: 45px;
+        background-color: rgb(245, 245, 245);
+        animation: gradient 10s ease infinite;
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.05em;
+        font-weight: 900;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    h1 {
+        filter: blur(0);
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    a {
+        color: rgb(255, 253, 253);
+        text-decoration: underline;
+        display: block;
+        margin-top: 10px;
+    }
+
+    img {
+        width: 350px;
+        /* Adjust the width as needed */
+        height: auto;
+        border-radius: 8px;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+</style>
+
+<body>
+    <h1>PROJECT ASSETS</h1>
+    <h3>Access granted to {{ resource }} Plan!</h3>
+
+    {% if resource == 'Project' %}
+    <a href='https://docs.google.com/document/d/1pQMpgJ2l3sutUZDLtSifIpd6YRQFE1yOjq1LG7E6ms4/edit?tab=t.0'><img
+            src="{{ url_for('static', filename='img/file.png') }}" alt="Project Thumbnail">
+    </a>
+
+    {% elif resource == 'Task' %}
+    <a href="https://docs.google.com/document/d/1pQMpgJ2l3sutUZDLtSifIpd6YRQFE1yOjq1LG7E6ms4/edit?tab=t.0">
+        <img src="{{ url_for('static', filename='img/file.png') }}" alt="Task Thumbnail">
+    </a>
+
+    {% elif resource == 'Bug' %}
+    <a href="https://docs.google.com/document/d/1pQMpgJ2l3sutUZDLtSifIpd6YRQFE1yOjq1LG7E6ms4/edit?tab=t.0">
+        <img src="{{ url_for('static', filename='img/file.png') }}" alt="Bug Thumbnail">
+    </a>
+
+    {% elif resource == 'Code' %}
+    <a href="https://docs.google.com/document/d/1pQMpgJ2l3sutUZDLtSifIpd6YRQFE1yOjq1LG7E6ms4/edit?tab=t.0g">
+        <img src="{{ url_for('static', filename='img/file.png') }}" alt="Code Thumbnail">
+    </a>
+    {% endif %}
+
+</body>
+
+</html>

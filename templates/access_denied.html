@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+</head>
+<style>
+    body {
+        background-color: #001f3f;
+    }
+
+    @font-face {
+        font-family: 'Century Gothic';
+        src: url("{{ url_for('static', filename='font/CenturyGothic.ttf') }}") format('truetype');
+    }
+
+    body {
+        font-family: 'Century Gothic', sans-serif;
+    }
+
+    h1,
+    h3 {
+        font-size: 50px;
+        background-color: rgb(255, 255, 255);
+        animation: gradient 10s ease infinite;
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.05em;
+        font-weight: 900;
+        line-height: 1.5;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h3 {
+        letter-spacing: 0;
+        font-size: 35px;
+    }
+
+    img {
+        width: 100px;
+        /* Adjust the width as needed */
+        height: auto;
+        border-radius: 8px;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+
+    h1 {
+
+        filter: blur(0);
+    }
+</style>
+
+<body>
+    <h1>OOPS!</h1>
+    <img src="{{ url_for('static', filename='img/oops.png') }}" alt="oops">
+    <h3>Access denied to {{ resource }} Plan. Please check your permissions.</h3>
+
+</body>
+
+</html>
